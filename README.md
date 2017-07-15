@@ -10,9 +10,8 @@ And I'm quite sure that will make your users dissatisfied.
 Solution? You are on the right page.
 
 This module provides various ranking strategies to assign correct ranks to tie
-scores.  It comes with [5 most common strategies](http://en.
-wikipedia.org/wiki/Ranking#Strategies_for_assigning_rankings): `competition`,
-`modified-competition`, `dense`, `ordinal`, and `fractional`.
+scores.  It comes with [5 most common strategies](http://en.wikipedia.org/wiki/Ranking#Strategies_for_assigning_rankings):
+`competition`, `modified-competition`, `dense`, `ordinal`, and `fractional`.
 
 
 ## Installation
