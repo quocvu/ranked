@@ -208,7 +208,6 @@ describe('ranking', () => {
     verify(res[20], 21, 2009);
   });
 
-
   it('should start ranking at 5', () => {
     const res = ranked.ranking(languages, scoreFn, {
       strategy: 'competition',
