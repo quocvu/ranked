@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/quocvu/ranked.svg?branch=master)](https://travis-ci.org/quocvu/ranked)
-[![Coverage Status](https://coveralls.io/repos/github/quocvu/ranked/badge.svg?branch=master)](https://coveralls.io/github/quocvu/ranked?branch=master)
+[![Build Status](http://img.shields.io/travis/quocvu/ranked.svg)](https://travis-ci.org/quocvu/ranked)
+[![Coverage Status](https://img.shields.io/coveralls/quocvu/ranked.svg)](https://coveralls.io/github/quocvu/ranked)
 
 # Strategies to assign ranks
 
