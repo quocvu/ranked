@@ -1,5 +1,8 @@
 [![Build Status](http://img.shields.io/travis/quocvu/ranked.svg)](https://travis-ci.org/quocvu/ranked)
 [![Coverage Status](https://img.shields.io/coveralls/quocvu/ranked.svg)](https://coveralls.io/github/quocvu/ranked)
+[![NPM Downloads](https://img.shields.io/npm/dt/ranked.svg)](https://www.npmjs.com/package/ranked)
+[![NPM Version](https://img.shields.io/npm/v/ranked.svg)](https://www.npmjs.com/package/ranked)
+
 
 # Strategies to assign ranks
 
