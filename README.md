@@ -84,4 +84,4 @@ var rankedItems = ranked.ranking(items, scoreFn, { start: 5 });
 
 ## License
 
-[MIT](https://github.com/trentm/node-bunyan/blob/master/LICENSE.txt)
+[MIT](https://github.com/quocvu/ranked/blob/master/LICENSE.txt)

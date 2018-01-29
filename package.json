@@ -18,7 +18,7 @@
     "strategy",
     "leader"
   ],
-  "author": "Quoc Vu",
+  "author": "Quoc Vu <darthvu@gmail.com> (https://github.com/quocvu)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/quocvu/ranked/issues"
