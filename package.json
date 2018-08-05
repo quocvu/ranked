@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/quocvu/ranked#readme",
   "dependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.10"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
