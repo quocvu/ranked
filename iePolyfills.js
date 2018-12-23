@@ -54,8 +54,8 @@ module.exports = function iePolyfills() {
       const resArray = new Array(i); // preallocate the Array
 
       while (i) {
-        resArray[i] = [ownProps[i], obj[ownProps[i]]];
         i -= 1;
+        resArray[i] = [ownProps[i], obj[ownProps[i]]];
       }
 
       return resArray;
