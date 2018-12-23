@@ -1,7 +1,7 @@
 /* eslint-disable no-bitwise, no-extend-native, prefer-rest-params */
 
-module.exports = function iePolyfills() {
-  // IE Polyfill for Array.prototype.fill
+module.exports = function polyfills() {
+  // polyfill for Array.prototype.fill
   if (!Array.prototype.fill) {
     Object.defineProperty(Array.prototype, 'fill', {
       value(value) {
@@ -46,7 +46,7 @@ module.exports = function iePolyfills() {
     });
   }
 
-  // IE Polyfill for Object.entries
+  // polyfill for Object.entries
   if (!Object.entries) {
     Object.entries = function entries(obj) {
       const ownProps = Object.keys(obj);

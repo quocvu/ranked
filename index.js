@@ -1,5 +1,5 @@
 // Load polyfills for IE Array.prototype.fill and Object.entries
-require('./iePolyfills')();
+require('./polyfills')();
 
 /**
  * Returns a comparison function used to compare entries during ranking
