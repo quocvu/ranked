@@ -1,5 +1,6 @@
-const should = require('should');
+/* eslint-disable no-extend-native, global-require */
 
+require('should');
 const ranked = require('../index');
 
 const scoreFn = language => language.year;
@@ -27,6 +28,15 @@ const languages = [
   { name: 'Go', year: 2009 },
 ];
 
+/**
+ * Verifies that the rank and year are both correct
+ *
+ * @param {object} result the ranked object
+ * @param {number} rank expected on result
+ * @param {number} year expected on result
+ * @throws {AssertionError}
+ * @returns {undefined}
+*/
 function verify(result, rank, year) {
   result.rank.should.be.equal(rank);
   result.item.year.should.be.equal(year);
@@ -237,5 +247,41 @@ describe('ranking', () => {
     verify(res[18], 23, 2003);
     verify(res[19], 23, 2003);
     verify(res[20], 25, 2009);
+  });
+});
+
+describe('Legacy Environments', () => {
+  // Simulate a legacy environment so that the polyfills are applied
+  Array.prototype.fill = null;
+  Object.entries = null;
+
+  // Apply polyfills
+  require('../polyfills')();
+
+  it('should provide the correct polyfills', () => {
+    const res = ranked.ranking(languages, scoreFn);
+
+    res.length.should.be.equal(languages.length);
+    verify(res[0], 1, 2009);
+    verify(res[1], 2, 2003);
+    verify(res[2], 2, 2003);
+    verify(res[3], 4, 2001);
+    verify(res[4], 5, 1995);
+    verify(res[5], 5, 1995);
+    verify(res[6], 5, 1995);
+    verify(res[7], 5, 1995);
+    verify(res[8], 9, 1993);
+    verify(res[9], 9, 1993);
+    verify(res[10], 9, 1993);
+    verify(res[11], 12, 1991);
+    verify(res[12], 13, 1990);
+    verify(res[13], 14, 1986);
+    verify(res[14], 14, 1986);
+    verify(res[15], 16, 1985);
+    verify(res[16], 17, 1980);
+    verify(res[17], 18, 1972);
+    verify(res[18], 18, 1972);
+    verify(res[19], 20, 1959);
+    verify(res[20], 21, 1958);
   });
 });
