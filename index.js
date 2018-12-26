@@ -1,4 +1,5 @@
-const _ = require('lodash');
+// Load polyfills for IE Array.prototype.fill and Object.entries
+require('./polyfills')();
 
 /**
  * Returns a comparison function used to compare entries during ranking
@@ -22,7 +23,7 @@ function getRankingFn(strategy) {
   if (strategy === 'modified-competition') {
     // Modified competition ranking ("1334" ranking)
     return (start, length) => ({
-      current: _.fill(Array(length), start + (length - 1)),
+      current: Array(length).fill(start + (length - 1)),
       next: start + length,
     });
   }
@@ -30,7 +31,7 @@ function getRankingFn(strategy) {
   if (strategy === 'dense') {
     // Dense ranking ("1223" ranking)
     return (start, length) => ({
-      current: _.fill(Array(length), start),
+      current: Array(length).fill(start),
       next: start + 1,
     });
   }
@@ -38,7 +39,7 @@ function getRankingFn(strategy) {
   if (strategy === 'ordinal') {
     // Ordinal ranking ("1234" ranking)
     return (start, length) => ({
-      current: _.range(start, start + length),
+      current: Array(length).fill(null).map((_, i) => start + i),
       next: start + length,
     });
   }
@@ -46,14 +47,14 @@ function getRankingFn(strategy) {
   if (strategy === 'fractional') {
     // Fractional ranking ("1 2.5 2.5 4" ranking)
     return (start, length) => ({
-      current: _.fill(Array(length), start + ((length - 1) / 2)),
+      current: Array(length).fill(start + ((length - 1) / 2)),
       next: start + length,
     });
   }
 
   // Standard competition ranking ("1224" ranking)
   return (start, length) => ({
-    current: _.fill(Array(length), start),
+    current: Array(length).fill(start),
     next: start + length,
   });
 }
@@ -88,7 +89,7 @@ module.exports = {
 
     items.forEach((e) => {
       const score = scoreFn(e);
-      if (_.has(buckets, score)) {
+      if (buckets[score]) {
         buckets[score].push(e);
       } else {
         buckets[score] = [e];
@@ -96,7 +97,7 @@ module.exports = {
     });
 
     // convert to array for sorting
-    buckets = _.toPairs(buckets);
+    buckets = Object.entries(buckets);
 
     // sort based on the score
     buckets.sort(compareFn);
