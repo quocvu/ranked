@@ -1,7 +1,6 @@
 /* eslint-disable no-extend-native, global-require */
 
-require('should');
-const ranked = require('../index');
+const ranked = require('./index');
 
 const scoreFn = language => language.year;
 const languages = [
@@ -38,17 +37,17 @@ const languages = [
  * @returns {undefined}
 */
 function verify(result, rank, year) {
-  result.rank.should.be.equal(rank);
-  result.item.year.should.be.equal(year);
+  expect(result.rank).toBe(rank);
+  expect(result.item.year).toBe(year);
 }
 
 describe('ranking', () => {
-  it('should do competition ranking', () => {
+  test('competition ranking', () => {
     const res = ranked.ranking(languages, scoreFn, {
       strategy: 'competition',
     });
 
-    res.length.should.be.equal(languages.length);
+    expect(res.length).toBe(languages.length);
     verify(res[0], 1, 2009);
     verify(res[1], 2, 2003);
     verify(res[2], 2, 2003);
@@ -72,12 +71,12 @@ describe('ranking', () => {
     verify(res[20], 21, 1958);
   });
 
-  it('should do dense ranking', () => {
+  test('dense ranking', () => {
     const res = ranked.ranking(languages, scoreFn, {
       strategy: 'dense',
     });
 
-    res.length.should.be.equal(languages.length);
+    expect(res.length).toBe(languages.length);
     verify(res[0], 1, 2009);
     verify(res[1], 2, 2003);
     verify(res[2], 2, 2003);
@@ -101,12 +100,12 @@ describe('ranking', () => {
     verify(res[20], 13, 1958);
   });
 
-  it('should do modified competition ranking', () => {
+  test('modified competition ranking', () => {
     const res = ranked.ranking(languages, scoreFn, {
       strategy: 'modified-competition',
     });
 
-    res.length.should.be.equal(languages.length);
+    expect(res.length).toBe(languages.length);
     verify(res[0], 1, 2009);
     verify(res[1], 3, 2003);
     verify(res[2], 3, 2003);
@@ -130,12 +129,12 @@ describe('ranking', () => {
     verify(res[20], 21, 1958);
   });
 
-  it('should do ordinal ranking', () => {
+  test('ordinal ranking', () => {
     const res = ranked.ranking(languages, scoreFn, {
       strategy: 'ordinal',
     });
 
-    res.length.should.be.equal(languages.length);
+    expect(res.length).toBe(languages.length);
     verify(res[0], 1, 2009);
     verify(res[1], 2, 2003);
     verify(res[2], 3, 2003);
@@ -159,12 +158,12 @@ describe('ranking', () => {
     verify(res[20], 21, 1958);
   });
 
-  it('should do fractional ranking', () => {
+  test('fractional ranking', () => {
     const res = ranked.ranking(languages, scoreFn, {
       strategy: 'fractional',
     });
 
-    res.length.should.be.equal(languages.length);
+    expect(res.length).toBe(languages.length);
     verify(res[0], 1, 2009);
     verify(res[1], 2.5, 2003);
     verify(res[2], 2.5, 2003);
@@ -188,13 +187,13 @@ describe('ranking', () => {
     verify(res[20], 21, 1958);
   });
 
-  it('should rank in ascending order', () => {
+  test('rank in ascending order', () => {
     const res = ranked.ranking(languages, scoreFn, {
       strategy: 'competition',
       reverse: true,
     });
 
-    res.length.should.be.equal(languages.length);
+    expect(res.length).toBe(languages.length);
     verify(res[0], 1, 1958);
     verify(res[1], 2, 1959);
     verify(res[2], 3, 1972);
@@ -218,14 +217,14 @@ describe('ranking', () => {
     verify(res[20], 21, 2009);
   });
 
-  it('should start ranking at 5', () => {
+  test('start ranking at 5', () => {
     const res = ranked.ranking(languages, scoreFn, {
       strategy: 'competition',
       reverse: true,
       start: 5,
     });
 
-    res.length.should.be.equal(languages.length);
+    expect(res.length).toBe(languages.length);
     verify(res[0], 5, 1958);
     verify(res[1], 6, 1959);
     verify(res[2], 7, 1972);
@@ -250,18 +249,18 @@ describe('ranking', () => {
   });
 });
 
-describe('Legacy Environments', () => {
+describe('legacy environments', () => {
   // Simulate a legacy environment so that the polyfills are applied
   Array.prototype.fill = null;
   Object.entries = null;
 
   // Apply polyfills
-  require('../polyfills')();
+  require('./polyfills')();
 
-  it('should provide the correct polyfills', () => {
+  test('provide the correct polyfills', () => {
     const res = ranked.ranking(languages, scoreFn);
 
-    res.length.should.be.equal(languages.length);
+    expect(res.length).toBe(languages.length);
     verify(res[0], 1, 2009);
     verify(res[1], 2, 2003);
     verify(res[2], 2, 2003);
