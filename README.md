@@ -38,9 +38,11 @@ const languages = [
 ];
 ```
 
-We need to provide a function allowing to access the attribute to rank on
-(the year in this case).  The function must accept one item of the array and
-return the value of the field to rank on.
+We need to provide a function defining the sorting criteria.  The function
+must accept one entry of the array and returns a value to rank on (the year
+in this case). Note the returned value can be directly an attribute of the
+object, or any computed value based on that object (e.g. the math test score
+plus the English test score of a student).
 
 ```
 const scoreFn = language => language.year;
@@ -49,11 +51,11 @@ const scoreFn = language => language.year;
 Let's run the ranking operation on this list of languages
 
 ```
-var ranked = require('ranked');
-var rankedItems = ranked.ranking(languages, scoreFn);
+const ranked = require('ranked');
+const rankedLanguages = ranked.ranking(languages, scoreFn);
 ```
 
-The `rankedItems` is an array that looks like below.  By default, it sorts
+The `rankedLanguages` is an array that looks like below.  By default, it sorts
 by descending order, using the `competition` strategy, and starts ranking at 1
 
 ```
@@ -68,19 +70,20 @@ by descending order, using the `competition` strategy, and starts ranking at 1
 To change the ranking strategy, use the third optional parameter.
 
 ```
-var rankedItems = ranked.ranking(items, scoreFn, { strategy: 'dense' });
+const rankedLanguages = ranked.ranking(items, scoreFn, { strategy: 'dense' });
 ```
 
 To sort in ascending order
 
 ```
-var rankedItems = ranked.ranking(items, scoreFn, { reverse: true });
+const rankedLanguages = ranked.ranking(items, scoreFn, { reverse: true });
 ```
 
-To start ranking at any number (e.g. 5)
+To start ranking at any number (e.g. 5).  
 
 ```
-var rankedItems = ranked.ranking(items, scoreFn, { start: 5 });
+const rankedLanguages = ranked.ranking(items, scoreFn, { start: 5 });
+// Go language would have a rank of 5.
 ```
 
 ## License
