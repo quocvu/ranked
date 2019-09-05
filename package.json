@@ -19,9 +19,9 @@
     "leader",
     "tie",
     "score",
-    "competition", 
-    "modified-competition", 
-    "dense", 
+    "competition",
+    "modified-competition",
+    "dense",
     "ordinal",
     "fractional"
   ],
@@ -40,6 +40,6 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
-    "jest": "^24.8.0"
+    "jest": "^24.9.0"
   }
 }
