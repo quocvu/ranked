@@ -16,7 +16,14 @@
     "rank",
     "ranking",
     "strategy",
-    "leader"
+    "leader",
+    "tie",
+    "score",
+    "competition", 
+    "modified-competition", 
+    "dense", 
+    "ordinal",
+    "fractional"
   ],
   "author": "Quoc Vu <darthvu@gmail.com> (https://github.com/quocvu)",
   "license": "MIT",
