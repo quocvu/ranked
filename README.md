@@ -2,7 +2,6 @@
 [![Coverage Status](https://img.shields.io/coveralls/quocvu/ranked.svg?style=for-the-badge)](https://coveralls.io/github/quocvu/ranked)
 [![NPM Downloads](https://img.shields.io/npm/dt/ranked.svg?style=for-the-badge)](https://www.npmjs.com/package/ranked)
 [![NPM Version](https://img.shields.io/npm/v/ranked.svg?style=for-the-badge)](https://www.npmjs.com/package/ranked)
-[![Dependencies](https://img.shields.io/david/quocvu/ranked.svg?style=for-the-badge)](https://david-dm.org/quocvu/ranked)
 [![License](https://img.shields.io/github/license/quocvu/ranked.svg?style=for-the-badge)](https://github.com/quocvu/ranked/blob/master/LICENSE)
 
 # Strategies to assign ranks
