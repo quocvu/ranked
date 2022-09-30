@@ -12,8 +12,6 @@ node_js:
   - 12
   - 10
   - 8
-  - 7
-  - 6
 before_install:
   - npm update
 install:
