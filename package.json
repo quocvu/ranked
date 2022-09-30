@@ -4,7 +4,6 @@
   "description": "Strategies for assigning ranks",
   "main": "index.js",
   "scripts": {
-    "cover": "NODE_ENV=test istanbul cover _mocha",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "test": "NODE_ENV=test jest --coverage"
   },
@@ -40,6 +39,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
-    "jest": "^24.9.0"
+    "jest": "^24.9.0",
+    "jest-extended": "^0.11.2"
   }
 }
