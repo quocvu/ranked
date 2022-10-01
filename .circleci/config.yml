@@ -13,6 +13,9 @@ jobs:
         type: string
     docker:
       - image: cimg/node:<< parameters.version >>
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD 
     steps:
       - checkout
       - run:
@@ -31,10 +34,10 @@ workflows:
   main:
     jobs:
       - build_and_test:
-          version: '16'
+          version: '16.10.0'
       - build_and_test:
-          version: '14'        
+          version: '14.18.0'        
       - build_and_test:
-          version: '12'                    
+          version: '12.10.0'                    
       - build_and_test:
-          version: '10'                    
+          version: '10.15.3'                    
