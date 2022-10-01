@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 jobs:
-  unit-tess:
+  unit-tests:
     runs-on: ubuntu-latest
 
     strategy:
