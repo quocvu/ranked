@@ -1,4 +1,4 @@
-name: Node.js CI
+name: "NodeJS-CI"
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 jobs:
-  test:
+  unit-tess:
     runs-on: ubuntu-latest
 
     strategy:
@@ -30,7 +30,7 @@ jobs:
           parallel: true
 
   finish:
-    needs: test
+    needs: unit-tests
     runs-on: ubuntu-latest
     steps:
       - name: Coveralls Finished

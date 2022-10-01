@@ -1,4 +1,4 @@
-[![Build Status](http://img.shields.io/travis/quocvu/ranked.svg?style=for-the-badge)](https://app.travis-ci.com/github/quocvu/ranked)
+[![Build Status](https://img.shields.io/github/workflow/status/quocvu/ranked/NodeJS-CI?style=for-the-badge)](https://github.com/quocvu/ranked/actions/workflows/unit-tests.yml)
 [![Coverage Status](https://img.shields.io/coveralls/quocvu/ranked.svg?style=for-the-badge)](https://coveralls.io/github/quocvu/ranked)
 [![NPM Downloads](https://img.shields.io/npm/dt/ranked.svg?style=for-the-badge)](https://www.npmjs.com/package/ranked)
 [![NPM Version](https://img.shields.io/npm/v/ranked.svg?style=for-the-badge)](https://www.npmjs.com/package/ranked)
@@ -13,9 +13,8 @@ And I'm quite sure that will make your users dissatisfied.
 Solution? You are on the right page.
 
 This module provides various ranking strategies to assign correct ranks to tie
-scores.  It comes with [5 most common strategies](http://en.wikipedia.org/wiki/Ranking#Strategies_for_assigning_rankings):
+scores. It comes with [5 most common strategies](http://en.wikipedia.org/wiki/Ranking#Strategies_for_assigning_rankings):
 `competition`, `modified-competition`, `dense`, `ordinal`, and `fractional`.
-
 
 ## Installation
 
@@ -37,7 +36,7 @@ const languages = [
 ];
 ```
 
-We need to provide a function defining the sorting criteria.  The function
+We need to provide a function defining the sorting criteria. The function
 must accept one entry of the array and returns a value to rank on (the year
 in this case). Note the returned value can be directly an attribute of the
 object, or any computed value based on that object (e.g. the math test score
@@ -54,7 +53,7 @@ const ranked = require('ranked');
 const rankedLanguages = ranked.ranking(languages, scoreFn);
 ```
 
-The `rankedLanguages` is an array that looks like below.  By default, it sorts
+The `rankedLanguages` is an array that looks like below. By default, it sorts
 by descending order, using the `competition` strategy, and starts ranking at 1
 
 ```
@@ -78,7 +77,7 @@ To sort in ascending order
 const rankedLanguages = ranked.ranking(items, scoreFn, { reverse: true });
 ```
 
-To start ranking at any number (e.g. 5).  
+To start ranking at any number (e.g. 5).
 
 ```
 const rankedLanguages = ranked.ranking(items, scoreFn, { start: 5 });
