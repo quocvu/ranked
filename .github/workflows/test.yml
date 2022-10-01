@@ -20,6 +20,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci -d
+      - run: npm install -D
       - run: npm test
       - run: npm run coveralls
