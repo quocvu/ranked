@@ -4,7 +4,6 @@
   "description": "Strategies for assigning ranks",
   "main": "index.js",
   "scripts": {
-    "coveralls": "jest --coverage",
     "test": "NODE_ENV=test jest --coverage"
   },
   "repository": {
