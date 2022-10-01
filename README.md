@@ -1,4 +1,4 @@
-[![Build Status](http://img.shields.io/travis/quocvu/ranked.svg?style=for-the-badge)](https://travis-ci.org/quocvu/ranked)
+[![Build Status](http://img.shields.io/travis/quocvu/ranked.svg?style=for-the-badge)](https://app.travis-ci.com/github/quocvu/ranked)
 [![Coverage Status](https://img.shields.io/coveralls/quocvu/ranked.svg?style=for-the-badge)](https://coveralls.io/github/quocvu/ranked)
 [![NPM Downloads](https://img.shields.io/npm/dt/ranked.svg?style=for-the-badge)](https://www.npmjs.com/package/ranked)
 [![NPM Version](https://img.shields.io/npm/v/ranked.svg?style=for-the-badge)](https://www.npmjs.com/package/ranked)
