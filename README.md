@@ -1,4 +1,3 @@
-[![Build Status](https://img.shields.io/github/workflow/status/quocvu/ranked/NodeJS-CI?style=for-the-badge)](https://github.com/quocvu/ranked/actions/workflows/NodeJS-CI.yml)
 [![Coverage Status](https://img.shields.io/coveralls/quocvu/ranked.svg?style=for-the-badge)](https://coveralls.io/github/quocvu/ranked)
 [![NPM Downloads](https://img.shields.io/npm/dt/ranked.svg?style=for-the-badge)](https://www.npmjs.com/package/ranked)
 [![NPM Version](https://img.shields.io/npm/v/ranked.svg?style=for-the-badge)](https://www.npmjs.com/package/ranked)
